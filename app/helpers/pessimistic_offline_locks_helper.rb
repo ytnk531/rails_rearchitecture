@@ -1,0 +1,2 @@
+module PessimisticOfflineLocksHelper
+end
