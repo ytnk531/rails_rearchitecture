@@ -1,24 +1,22 @@
-# README
+# Rails Re-architecture
+## 概要
+Railsの提供するアーキテクチャから外れたくなったときに使えるパターンの実装集です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## パターン
+### Unit of Work
+#### 概要
+- データソースと同期が必要なオブジェクトを保持しておき、同期処理逐次的ではなくをまとめて行う。
+#### メリット
+- モデルを操作するコードでデータの更新タイミングを気にしなくて良くなる
+- データ同期の方法に関する知識をUnit Of Workオブジェクトに閉じ込められる
+#### 使いどき
+- 複数のモデルに対する操作のトランザクションをひとまとめにしたいとき
+- 更新を伴う時間のかかる処理をするときの、DBコネクション、トランザクションを張る時間を短くしたいとき
+- 更新順序に関するロジックを単純にしたいとき
 
-Things you may want to cover:
+### コード
+- `app/models/unit_of_work.rb`
+- `app/controllers/unit_of_works_controller.rb`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# References
+Martin Fowler, エンタープライズアプリケーションアーキテクチャパターン, 翔泳社, 2005.
