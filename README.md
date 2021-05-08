@@ -15,7 +15,7 @@ Railsの提供するアーキテクチャから外れたくなったときに使
 - 更新順序に関するロジックを単純にしたいとき
 
 #### コード
-- `app/models/unit_of_work.rb`
+- `app/unit_of_works/unit_of_work.rb`
 - `app/controllers/unit_of_works_controller.rb`
 
 # References
