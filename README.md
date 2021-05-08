@@ -14,7 +14,7 @@ Railsの提供するアーキテクチャから外れたくなったときに使
 - 更新を伴う時間のかかる処理をするときの、DBコネクション、トランザクションを張る時間を短くしたいとき
 - 更新順序に関するロジックを単純にしたいとき
 
-### コード
+#### コード
 - `app/models/unit_of_work.rb`
 - `app/controllers/unit_of_works_controller.rb`
 
